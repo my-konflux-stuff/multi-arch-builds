@@ -235,7 +235,8 @@ spec:
       runAfter:
       - prefetch-dependencies
 
-      resolver: git
+      taskRef:
+        resolver: git
         params:
         - name: url
           value: https://github.com/tkdchen/build-definitions.git
