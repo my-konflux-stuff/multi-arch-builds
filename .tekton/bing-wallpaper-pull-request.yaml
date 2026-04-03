@@ -241,7 +241,7 @@ spec:
         - name: url
           value: https://github.com/tkdchen/build-definitions.git
         - name: revision
-          value: STONEBLD-4559
+          value: main
         - name: pathInRepo
           value: task/buildah-remote-oci-ta/0.9/buildah-remote-oci-ta.yaml
 
