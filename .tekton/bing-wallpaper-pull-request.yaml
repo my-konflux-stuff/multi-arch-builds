@@ -234,15 +234,26 @@ spec:
         value: "true"
       runAfter:
       - prefetch-dependencies
-      taskRef:
+
+      resolver: git
         params:
-        - name: name
-          value: buildah-remote-oci-ta
-        - name: bundle
-          value: quay.io/konflux-ci/tekton-catalog/task-buildah-remote-oci-ta:0.9@sha256:a9ca472e297388d6ef8d1f51ee205abee6076aed7c5356ec0df84f14a2e78ad8
-        - name: kind
-          value: task
-        resolver: bundles
+        - name: url
+          value: https://github.com/tkdchen/build-definitions.git
+        - name: revision
+          value: STONEBLD-4559
+        - name: pathInRepo
+          value: task/buildah-remote-oci-ta/0.9/buildah-remote-oci-ta.yaml
+
+#      taskRef:
+#        params:
+#        - name: name
+#          value: buildah-remote-oci-ta
+#        - name: bundle
+#          value: quay.io/konflux-ci/tekton-catalog/task-buildah-remote-oci-ta:0.9@sha256:a9ca472e297388d6ef8d1f51ee205abee6076aed7c5356ec0df84f14a2e78ad8
+#        - name: kind
+#          value: task
+#        resolver: bundles
+
     - name: build-image-index
       params:
       - name: IMAGE
